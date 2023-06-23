@@ -1,0 +1,28 @@
+def game_start():
+    print("Welcome to the Text Adventure Game!")
+    print("You find yourself in a mysterious room.")
+
+    while True:
+        command = input("What would you like to do? (Type 'help' for commands): ")
+        if command.lower() == "help":
+            print("Available commands: ")
+            print("- explore: Look around the room.")
+            print("- take [item]: Pick up an item.")
+            print("- use [item]: Use an item.")
+            print("- quit: Quit the game.")
+        elif command.lower() == "explore":
+            print("You see a chest in the corner of the room.")
+        elif command.lower().startswith("take"):
+            item = command.split(" ", 1)[1]
+            print("You picked up the", item + ".")
+        elif command.lower().startswith("use"):
+            item = command.split(" ", 1)[1]
+            print("You used the", item + ".")
+        elif command.lower() == "quit":
+            print("Thanks for playing!")
+            break
+        else:
+            print("Invalid command. Type 'help' for available commands.")
+
+if __name__ == "__main__":
+    game_start()
